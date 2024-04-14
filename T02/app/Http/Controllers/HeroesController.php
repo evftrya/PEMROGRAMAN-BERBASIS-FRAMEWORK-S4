@@ -14,7 +14,7 @@ class HeroesController extends Controller
         return view('tes',['foto'=>$hero['image'],'nama'=>$hero['name'],'theSlogan'=>$hero['slogan'],'navbar'=>Heroes::getAll(),compact('hero')]);
     }
     public function store(Request $request, Index $index){
-        // dd($request->all());
+        
 
         $val = $request->validate([
             'name'  => 'required',
@@ -22,17 +22,18 @@ class HeroesController extends Controller
             'slogan'=> 'required',
             'image' => 'nullable'
         ]);
-
+        
         if(empty($val['image'])){
             $val['image'] = "'https://i.pinimg.com/564x/07/c3/31/07c331847fd83cb876f9d89299784880.jpg'";
         }
-        
         $theID = count(Heroes::all())+1;
-        $temp = Heroes::findOrFail($theID);
+        
+        // $temp = Heroes::findOrFail(27);
         $val['id'] = $theID;
-        if($temp->id===$theID){
+        if(Heroes::findOrFail($theID)->id===$theID){
             $val['id']=Heroes::getMaxID()+1;
         }
+        
         $hero = new Heroes;
         $hero->name = $val['name'];
         $hero->id = $val['id'];

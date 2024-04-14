@@ -21,21 +21,16 @@ use App\Models\Heroes;
 */
 Route::put('/HeroEdit/{id}',[HeroesController::class,'update'])->name('EditHero');
 Route::get('/', [Index::class, 'forIndex']);
-// Route::get("/",[Heroes::getPanjang()]);
 Route::get('/im', [Index::class, 'forIronMan']);
 Route::get('/t', [Index::class, 'forThor']);
 Route::get('/ds', [Index::class, 'forDoctorStrange']);
 Route::get('/new', [Index::class, 'forNew']);
 Route::get('/edit',[Index::class, 'forEdit']);
-// Route::get('/b', [navbarControllers::class, 'cals'])->name('nbr');
-// Route::get('/Others',function(){
-    
-//     return view('Others',['others'=>Heroes::getOthers(),'navbar'=>Heroes::getAll()]);
-// });
 Route::get('/Others',[Index::class, 'forOthers']);
 Route::get('/Others/Detail/{status}', [Others::class, 'getOthersCon'])->name('Detail');
 Route::get('/Others/Edit/{id}', [Others::class, 'forEdit'])->name('Edit');
-
+Route::post('/newHero',[HeroesController::class, 'store']);
+Route::get('/Others/Delete/{id}', [HeroesController::class, 'destroy'])->name('Delete');
 // Route::get('/', function () {
 //     return Heroes::find('tes');
 // });
@@ -51,5 +46,10 @@ Route::get('/Others/Edit/{id}', [Others::class, 'forEdit'])->name('Edit');
 
 
 // Route::resource('newHero',HeroesController::class);
-Route::post('/newHero',[HeroesController::class, 'store']);
-Route::get('/Others/Delete/{id}', [HeroesController::class, 'destroy'])->name('Delete');
+// Route::get('/b', [navbarControllers::class, 'cals'])->name('nbr');
+// Route::get('/Others',function(){
+    
+//     return view('Others',['others'=>Heroes::getOthers(),'navbar'=>Heroes::getAll()]);
+// });
+
+// Route::get("/",[Heroes::getPanjang()]);
