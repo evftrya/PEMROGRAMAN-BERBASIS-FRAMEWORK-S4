@@ -7,7 +7,7 @@
 
         <div class="profile">
             <img src="/assets/img/marvel aset.jpg" alt="" class="img-fluid rounded-circle">
-            <h1 class="text-light"><a href="https://github.com/evtrya">Evi Fitriya</a></h1>
+            <h1 class="text-light"><a href="https://github.com/evftrya">Evi Fitriya</a></h1>
             <a href="https://pddikti.kemdikbud.go.id/data_mahasiswa/MjVFM0RCQTUtMjBGNi00NjhFLUE2OTItN0I2MjA3OEQ3MzAz">(1201222005)</a>
 
             <h1 class="text-light" id="tugas"><a href="https://telkomuniversityofficial-my.sharepoint.com/:f:/g/personal/evifitriya_student_telkomuniversity_ac_id/EgBa3eyzw_hDk0D6w0WF0zQBPd2JMvtuzDCAedYz2ZH-8A?e=hZ3F1s">---MODUL---</a></h1>
