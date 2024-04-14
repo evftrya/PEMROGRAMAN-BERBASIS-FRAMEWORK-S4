@@ -501,3 +501,99 @@ section::-webkit-scrollbar {
     font-size: 16px;
     /* Ukuran font */
 }
+
+
+/* ----------------- NEW HERO */
+
+form {
+    border: #149ddd;
+    border-style: double;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 0 10px;
+    /* Mengatur jarak dari atas dan bawah, serta secara otomatis mencenternya */
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: rgb(177, 177, 177);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #092b27;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* -----------------EDIT BUTTON OTHERS PAGE */
+
+.edit-button,
+.delete-button {
+    position: fixed;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #149ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-button {
+    top: 20px;
+}
+
+.delete-button {
+    top: 70px;
+}
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+}
+
+.edit-icon,
+.delete-button {
+    font-size: 24px;
+}
+
+@media (max-width: 1199px) {
+    .edit-button {
+        top: 10%;
+    }
+    .delete-button {
+        top: 18%;
+    }
+}

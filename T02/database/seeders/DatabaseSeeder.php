@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Heroes;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +15,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
+        // theMcu::create([
+        //     'id'            =>'9',
+        //     'nameKarakter'   =>'Captain Amerika',
+        //     'earth'         =>'818'
         // ]);
+
+        // theMcu::create([
+        //     'id'            =>'8',
+        //     'nameKarakter'   =>'Thanos',
+        //     'earth'         =>'818'
+        // ]);
+
+        Heroes::factory(20)->create();
+
     }
 }
