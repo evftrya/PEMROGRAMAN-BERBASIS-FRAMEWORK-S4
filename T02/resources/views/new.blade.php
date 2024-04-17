@@ -18,15 +18,15 @@
         @method($put)
         <!-- untuk menlindungi dari eksploitasi -->
         <div>
-            <label for="">Status</label>
+            <label for="">Status*</label>
             <input type="text" name="status" value="{{$istatus}}">
         </div>
         <div>
-            <label for="">Name</label>
+            <label for="">Name*</label>
             <input type="text" name="name" value="{{$inama}}">
         </div>
         <div>
-            <label for="">Short Quotes</label>
+            <label for="">Short Quotes*</label>
             <input type="text" name="slogan" value="{{$islogan}}">
         </div>
         <div>
