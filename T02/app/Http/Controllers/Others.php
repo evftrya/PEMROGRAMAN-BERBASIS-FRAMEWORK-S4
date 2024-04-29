@@ -10,7 +10,24 @@ class Others extends Controller
     public function getOthersCon($status){
         
         $hero = Heroes::find($status);
-        return view('Detail',['foto'=>$hero['image'],'nama'=>$hero['name'],'theSlogan'=>$hero['slogan'],'navbar'=>Heroes::getAll()]);
+        // $back="apani";
+        if(strpos($hero['image'],"http")!==false){
+            $back=$hero['image'];
+            // dd($back);
+        }
+        else{
+            // /assets/css/TheStyle.css
+            // $back = '/storage/images/'.$hero['image'];
+            // $back = asset('images/'.$hero['image']);
+            $back = 'http://127.0.0.1:8000/storage/assets/img/'.$hero['image'];
+            // dd($back);
+            // dd("tes");
+            // dd($back);
+            // return dd($back);
+        }
+        // return dd($back);
+        // dd($hero);
+        return view('Detail',['foto'=>$back,'nama'=>$hero['name'],'theSlogan'=>$hero['slogan'],'navbar'=>Heroes::getAll()]);
         // return $status;
     }
 
@@ -22,6 +39,7 @@ class Others extends Controller
                 $hero = $back;
             }
         }
+        dd($hero);
         return view('edit',['foto'           =>'https://i.pinimg.com/564x/07/c3/31/07c331847fd83cb876f9d89299784880.jpg',
                             'nama'          =>'Edit Hero',
                             'theSlogan'     =>'Masukkan Detil Hero',
@@ -31,7 +49,10 @@ class Others extends Controller
                             'istatus'       => $hero->status,
                             'ifoto'         => $hero->image,
                             'islogan'       => $hero->slogan,
-                            'id'            => $hero->id]);
+                            'id'            => $hero->id,
+                            'inih'          => $hero->nih,
+                            'iemail'        => $hero->email,
+                            'ispesialis'    => $hero->spesialis]);
     }
 
     

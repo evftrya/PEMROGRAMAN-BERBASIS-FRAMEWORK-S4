@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Heroes;
+use App\Models\Heroes2;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         //     'earth'         =>'818'
         // ]);
 
-        Heroes::factory(20)->create();
+        Heroes2::factory(20)->create();
 
     }
 }

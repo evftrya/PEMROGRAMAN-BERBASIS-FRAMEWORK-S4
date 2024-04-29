@@ -20,7 +20,12 @@ return new class extends Migration
             $table->string('name');
             $table->String('slogan');
             $table->String('image');
+            $table->String('nih');
+            $table->String('email');
+            $table->String('spesialis');
         });
+
+        
     }
 
 
