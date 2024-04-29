@@ -39,6 +39,7 @@ class HeroesController extends Controller
         // dd($val['image']);
         // dd($val['images']);
         if(empty($val['images']) && empty($val['image'])){
+            //jika foto kosong
             $val['image'] = "'https://i.pinimg.com/564x/07/c3/31/07c331847fd83cb876f9d89299784880.jpg'";
         }
         
@@ -50,6 +51,7 @@ class HeroesController extends Controller
         $hero->status = $val['status'];
         $hero->slogan = $val['slogan'];
         $hero->image = $val['image'];
+        //default image link
         $hero->spesialis = $val['spesialis'];
         $hero->email = $val['email'];
         $hero->nih = $val['nih'];
@@ -59,9 +61,11 @@ class HeroesController extends Controller
             try {
                 // dd($request->file('images'));
                 if($request->file('images')==null){
+                    //jika foto kosong
                     $hero->image = "'https://i.pinimg.com/564x/07/c3/31/07c331847fd83cb876f9d89299784880.jpg'";
                 }
                 else{
+                    //jika foto file
                     $file = $request->file('images');
                     $oriName = time().'.'.$file->extension();
                     // $file->move(public_path('public\assets\img'),$oriName);
@@ -102,18 +106,20 @@ class HeroesController extends Controller
                 $dName = $oriName;
                 // dd($dName);
                 // $request->images->storeAs('images', $dName,'public');
+                
                 $request->file('images')->storeAs('/assets/img',$dName,'public');
+                //save foto ke direktori lokal
             }
         }
         
 
         // return $index->forNew();
-        return redirect('/new');
+        return redirect('/Others');
     }
 
     public function update($id, Request $req, Others $contOthers){
         // dd($req->images);
-        dd($req);
+        // dd($req);
         $val = $req->validate([
             'name'      => 'required',
             'status'    => 'required',

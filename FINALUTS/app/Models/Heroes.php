@@ -10,7 +10,7 @@ class Heroes extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','status','slogan','image'];
+    protected $fillable = ['name','slogan','image'];
     private static $THs=[];
     
     private static $TheHeroes = [['status'=>'All','name'=>'Avengers','slogan'=>'Marvel Cinematic Univers','image'=>'https://i.pinimg.com/564x/60/b6/8f/60b68f2100f43297952a7c09690cf397.jpg','link'=>'/'],
